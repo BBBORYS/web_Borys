@@ -1,0 +1,26 @@
+<header>
+    <h1>Mi Documento Personal</h1>
+    <nav>
+        <ul>
+            <li><a routerLink="/">Inicio</a></li> 
+            <li><a routerLink="/acerca">Acerca de</a></li> 
+            <li><a routerLink="/contacto">Contacto</a></li> 
+            <li><a routerLink="/tienda">Tienda</a></li> 
+            <li><a routerLink="/datos">datos</a></li> 
+            <li><a routerLink="/bibliografia">Bibliografía</a></li> 
+        </ul>
+    </nav>
+</header>
+
+<!-- Contenido Principal -->
+<main>
+    <!-- Aquí es donde Angular inyectará los componentes de tus rutas.
+         Si la ruta es '/', se cargará CuerpoInicioComponent.
+         Si la ruta es '/tienda', se cargará TiendaComponent.
+    -->
+    <router-outlet></router-outlet>
+</main>
+<!-- Pie de Página -->
+<footer>
+    <p>&copy; 2025 Mi Nombre Ficticio. Todos los derechos reservados.</p>
+</footer>

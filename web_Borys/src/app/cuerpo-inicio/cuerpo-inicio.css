@@ -1,0 +1,63 @@
+/* src/style.css (añade esto al final de tu archivo existente) */
+
+/* Estilos para el contenedor del componente CuerpoInicio */
+.cuerpo-inicio-section {
+    text-align: center; /* Centra el texto dentro de la sección */
+    padding: 30px 20px;
+}
+
+.cuerpo-inicio-section h2 {
+    font-size: 2.8rem;
+    color: #004085; /* Un azul más oscuro */
+    margin-bottom: 20px;
+    border-bottom: none; /* Quitamos el borde inferior si no lo quieres aquí */
+}
+
+.cuerpo-inicio-section h3 {
+    font-size: 2.2rem;
+    color: #0056b3;
+    margin-top: 40px;
+    margin-bottom: 25px;
+}
+
+.cuerpo-inicio-section p {
+    font-size: 1.1rem;
+    color: #555;
+    max-width: 700px;
+    margin: 0 auto 30px auto; /* Centra el párrafo */
+}
+
+/* Contenedor del tren de imágenes */
+.image-train-container {
+    width: 100%;
+    overflow-x: auto; /* Permite el desplazamiento horizontal si el contenido es demasiado ancho */
+    white-space: nowrap; /* Evita que las imágenes salten de línea */
+    padding: 15px 0; /* Espaciado interno */
+    margin: 30px 0;
+    background-color: #e9ecef; /* Fondo ligero para el carrusel */
+    border-radius: 10px;
+    box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.1); /* Sombra interna sutil */
+    -webkit-overflow-scrolling: touch; /* Mejora el desplazamiento en iOS */
+}
+
+/* El tren de imágenes en sí */
+.image-train {
+    display: inline-flex; /* Hace que los elementos se alineen en una fila */
+    gap: 20px; /* Espacio entre las imágenes */
+    padding: 0 20px; /* Espaciado a los lados del tren dentro del contenedor */
+}
+
+.image-train img {
+    width: 300px; /* Ancho fijo para cada imagen */
+    height: 200px; /* Alto fijo para cada imagen */
+    object-fit: cover; /* Asegura que la imagen cubra el área sin distorsionarse */
+    border-radius: 8px; /* Bordes redondeados para las imágenes */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para cada imagen */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición suave para el hover */
+    cursor: pointer; /* Indica que son interactivas */
+}
+
+.image-train img:hover {
+    transform: translateY(-5px) scale(1.02); /* Efecto de elevación y ligero zoom al pasar el ratón */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada al pasar el ratón */
+}

@@ -1,0 +1,64 @@
+/* Contenedor principal del formulario */
+.form-container {
+  max-width: 500px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+}
+
+h2 {
+  text-align: center;
+  color: #333333;
+  margin-bottom: 25px;
+}
+
+/* Estilos para cada grupo de formulario (label e input) */
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #555555;
+}
+
+input[type="text"],
+input[type="tel"] {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #cccccc;
+  border-radius: 6px;
+  font-size: 16px;
+  box-sizing: border-box; /* Asegura que el padding no afecte el ancho */
+  transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="tel"]:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+}
+
+/* Estilos para el botón de enviar */
+button[type="submit"] {
+  width: 100%;
+  padding: 15px;
+  background-color: #007bff;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #0056b3;
+}

@@ -1,0 +1,65 @@
+<div class="form-container">
+  <h2>Formulario de Datos</h2>
+  <form id="datosForm">
+    <div class="form-group">
+      <label for="nombre">Nombre:</label>
+      <input type="text" id="nombre" placeholder="Ingresa tu nombre">
+    </div>
+
+    <div class="form-group">
+      <label for="telefono">Teléfono:</label>
+      <input type="tel" id="telefono" placeholder="Ingresa tu teléfono">
+    </div>
+
+    <button type="submit">Enviar</button>
+  </form>
+</div>
+
+<script type="module">
+  // Importa las funciones necesarias de Firebase
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+  import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+  // TODO: Reemplaza con la configuración de tu proyecto de Firebase
+  const firebaseConfig = {
+   apiKey: "AIzaSyByZnw6BKAklih4f1ctQExDK-W7Wjd3yKA",
+  authDomain: "web-borys.firebaseapp.com",
+  projectId: "web-borys",
+  storageBucket: "web-borys.firebasestorage.app",
+  messagingSenderId: "19512052296",
+  appId: "1:19512052296:web:7aca5a6ae986643f36267d",
+  measurementId: "G-WK3EPKT0GV"
+  };
+
+  // Inicializa Firebase
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
+
+  // Obtiene el formulario
+  const form = document.getElementById('datosForm');
+
+  // Añade un "listener" para el evento de envío
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault(); // Evita que la página se recargue
+
+    const nombre = document.getElementById('nombre').value;
+    const telefono = document.getElementById('telefono').value;
+
+    if (nombre && telefono) {
+      try {
+        const docRef = await addDoc(collection(db, "datos"), {
+          nombre: nombre,
+          telefono: telefono,
+        });
+        console.log("Documento escrito con ID: ", docRef.id);
+        alert('Datos guardados con éxito.');
+        form.reset(); // Limpia el formulario
+      } catch (error) {
+        console.error("Error al añadir el documento: ", error);
+        alert('Hubo un error al guardar los datos.');
+      }
+    } else {
+      alert('Por favor, completa todos los campos.');
+    }
+  });
+</script>
